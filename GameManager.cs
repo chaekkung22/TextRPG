@@ -17,7 +17,7 @@ namespace TextRPG
             Start start = new Start();
             start.GetNameAndJob();
             Village village = new Village();
-            village.VilageMenu();
+            village.VillageMenu();
         }
     }
 }

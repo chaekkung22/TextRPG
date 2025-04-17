@@ -43,6 +43,7 @@ namespace TextRPG
         public void ShowStatus()
         {
             string show = $@"==내 상태 보기==
+
 Lv. {Level:D2}
 {Name} ({Job})
 공격력 : {Attack}
@@ -53,7 +54,6 @@ Gold : {Gold}G
 0. 나가기";
             int input = InputHelper.GetInt(show, 0, 0);
             return;
-
         }
 
     }
