@@ -6,29 +6,26 @@ using System.Threading.Tasks;
 
 namespace TextRPG
 {
-    internal class Item
-    {
 
-
-        public struct ItemInfo
+        public class Item
         {
             public string Name;
             public int Value;
             public string Explain;
             public int Price;
             public ItemType Type;
+            public bool IsSold;
 
-            public ItemInfo(string name, int value, string explain, int price, ItemType type)
+            public Item(string name, int value, string explain, int price, ItemType type)
             {
                 Name = name;
                 Value = value;
                 Explain = explain;
                 Price = price;
                 Type = type;
+                IsSold = false;
             }
         }
-
-    } 
     public enum ItemType
         {
             Attack,
