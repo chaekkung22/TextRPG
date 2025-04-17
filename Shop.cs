@@ -12,7 +12,6 @@ namespace TextRPG
 
         public void ShopMenu()
         {
-            ItemList();
             string listText = ItemListText();
 
             string show = $@"==상점==
@@ -54,34 +53,38 @@ namespace TextRPG
 구매할 아이템의 번호를 입력하세요.
 0. 나가기";
             int input = InputHelper.GetInt(show, 0, itemLength);
-
+            int item = input - 1;
             if (input == 0)
-                return;
+                ShopMenu();
             else
             {
-                if(shopItems[input].IsSold)
+                if(shopItems[item].IsSold)
                 {
                     Console.WriteLine("이미 구매한 아이템입니다.");
-                    return;
+                    Thread.Sleep(1000);
+                    ShopMenu();
                 }
-                else if (Player.Instance.Gold <= shopItems[input].Price)
+                else if (Player.Instance.Gold <= shopItems[item].Price)
                 {
                     Console.WriteLine("Gold가 부족합니다.");
-                    return;
+                    Thread.Sleep(1000);
+                    ShopMenu();
                 }
                 else
                 {
                     Console.WriteLine("구매를 완료했습니다.");
-                    Player.Instance.Gold -= shopItems[input].Price;
-                    shopItems[input].IsSold = true;
+                    Thread.Sleep(1000);
+                    Player.Instance.Gold -= shopItems[item].Price;
+                    shopItems[item].IsSold = true;
                     
-                    return;
+                    new Inventory().InventoryList(shopItems[item]); // 입력한 번호의 아이템을 인벤토리에 저장
+
+                    ShopMenu(); 
                 }
-               
             }
         }
 
-        public void ItemList()
+        public Shop()
         {
             shopItems = new List<Item>()
             {
@@ -94,14 +97,15 @@ namespace TextRPG
             };
         }
 
+
         string ItemListText(bool withIndex = false)
         {
             string result = "";
             for (int i = 0; i < shopItems.Count; i++)
             { 
                 var item = shopItems[i];
-
-                string priceText = item.IsSold ? "구매완료" : $"{item.Price,5} G";
+          
+                    string priceText = item.IsSold ? "구매완료" : $"{item.Price,5} G";
 
                 string valueText = item.Type == ItemType.Attack
                     ? "공격력 +"

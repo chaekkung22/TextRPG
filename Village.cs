@@ -29,7 +29,8 @@ namespace TextRPG
             }
             else if (choice == 2) 
             {
-
+                new Inventory().InventoryMenu();
+                VillageMenu();
             }
             else 
             {

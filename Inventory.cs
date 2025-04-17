@@ -12,10 +12,12 @@ namespace TextRPG
 {
     internal class Inventory
     {
-        void MyInventory()
+        public List<Item> InventoryItem { get; set; } = new List<Item>();
+        public void InventoryList(Item newItem)
         {
-
+            InventoryItem.Add(newItem);
         }
+
         public void InventoryMenu()
         {
             string show = $@"==인벤토리==
