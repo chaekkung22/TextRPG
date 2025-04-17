@@ -43,6 +43,7 @@ namespace TextRPG
         public void ShowStatus()
         {
             string show = $@"==내 상태 보기==
+캐릭터의 정보가 표시됩니다.
 
 Lv. {Level:D2}
 {Name} ({Job})

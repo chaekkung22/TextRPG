@@ -14,10 +14,8 @@ namespace TextRPG
         private GameManager() { }
         public void Run()
         {
-            Start start = new Start();
-            start.GetNameAndJob();
-            Village village = new Village();
-            village.VillageMenu();
+            new Start().GetNameAndJob();
+            new Village().VillageMenu();
         }
     }
 }

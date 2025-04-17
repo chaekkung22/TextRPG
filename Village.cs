@@ -28,9 +28,14 @@ namespace TextRPG
                 VillageMenu();
             }
             else if (choice == 2) 
-            { }
+            {
+
+            }
             else 
-            { }
+            {
+                new Shop().ShopMenu();
+                VillageMenu();
+            }
         }
     }
 }

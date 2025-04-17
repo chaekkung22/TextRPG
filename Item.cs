@@ -8,11 +8,7 @@ namespace TextRPG
 {
     internal class Item
     {
-        public enum ItemType
-        {
-            Attack,
-            Defence
-        }
+
 
         public struct ItemInfo
         {
@@ -20,14 +16,22 @@ namespace TextRPG
             public int Value;
             public string Explain;
             public int Price;
-            public ItemInfo(string name, int value, string explain, int price)
+            public ItemType Type;
+
+            public ItemInfo(string name, int value, string explain, int price, ItemType type)
             {
                 Name = name;
                 Value = value;
                 Explain = explain;
                 Price = price;
+                Type = type;
             }
         }
 
-    }
+    } 
+    public enum ItemType
+        {
+            Attack,
+            Defence
+        }
 }
