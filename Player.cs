@@ -48,9 +48,10 @@ Lv. {Level:D2}
 공격력 : {Attack}
 방어력 : {Deffense}
 체 력 : {Health}
-Gold : {Gold}G";
+Gold : {Gold}G
 
-            Console.WriteLine(show);
+0. 나가기";
+            InputHelper.GetInt(show, 0, 0);
 
         }
 
