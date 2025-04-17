@@ -40,6 +40,20 @@ namespace TextRPG
             Gold = 1500;
         }
 
+        public void ShowStatus()
+        {
+            string show = $@"==내 상태 보기==
+Lv. {Level:D2}
+{Name} ({Job})
+공격력 : {Attack}
+방어력 : {Deffense}
+체 력 : {Health}
+Gold : {Gold}G";
+
+            Console.WriteLine(show);
+
+        }
+
     }
 }
 
