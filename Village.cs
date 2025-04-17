@@ -8,7 +8,7 @@ namespace TextRPG
 {
     internal class Village
     {
-        public void VilageMenu()
+        public void VillageMenu()
         {
             Console.Clear();
             string menu = @"스파르타 마을에 오신 여러분 환영합니다.
@@ -24,7 +24,8 @@ namespace TextRPG
 
             if (choice == 1)
             {
-                
+                Player.Instance.ShowStatus();
+                VillageMenu();
             }
             else if (choice == 2) 
             { }

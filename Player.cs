@@ -51,7 +51,8 @@ Lv. {Level:D2}
 Gold : {Gold}G
 
 0. 나가기";
-            InputHelper.GetInt(show, 0, 0);
+            int input = InputHelper.GetInt(show, 0, 0);
+            return;
 
         }
 
