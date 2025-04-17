@@ -17,11 +17,11 @@ namespace TextRPG
 
         public string Name { get; private set; }
         public string Job { get; private set; }
-        public int Level { get; private set; } = 1;
-        public int Attack { get; private set; }
-        public int Deffense { get; private set; }
-        public int Health { get; private set; }
-        public int Gold { get; private set; }
+        public int Level { get; set; } = 1;
+        public int Attack { get; set; }
+        public int Deffense { get; set; }
+        public int Health { get; set; }
+        public int Gold { get; set; }
 
         private Player() { }
 
