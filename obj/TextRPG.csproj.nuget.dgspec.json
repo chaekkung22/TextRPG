@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG\\TextRPG.csproj": {}
+    "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG\\TextRPG.csproj": {
+    "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG\\TextRPG.csproj",
+        "projectUniqueName": "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG.csproj",
         "projectName": "TextRPG",
-        "projectPath": "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG\\TextRPG.csproj",
+        "projectPath": "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG.csproj",
         "packagesPath": "C:\\Users\\chaeyoung\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\TextRPG\\obj\\",
+        "outputPath": "C:\\Users\\chaeyoung\\Documents\\GitHub\\TextRPG\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -9,9 +9,37 @@ namespace TextRPG
 
     internal class Player
     {
-       public Player()
-        {
 
+        private static Lazy<Player> instance = new Lazy<Player>(() => new Player());
+
+        public static Player Instance => instance.Value;
+
+
+        public string Name { get; private set; }
+        public string Job { get; private set; }
+        public int Level { get; private set; } = 1;
+        public int Attack { get; private set; }
+        public int Deffense { get; private set; }
+        public int Health { get; private set; }
+        public int Gold { get; private set; }
+
+        private Player() { }
+
+        public static void CreateInstance(string name, string jobName)
+        {
+            instance = new Lazy<Player>(() => new Player(name, jobName));
         }
+
+        private Player(string name, string jobName)
+        {
+            Name = name;
+            Job = jobName;
+            Attack = 10;
+            Deffense = 5;
+            Health = 100;
+            Gold = 1500;
+        }
+
     }
 }
+

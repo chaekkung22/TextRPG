@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace TextRPG
 {
     internal class Start
-    {    
+    {
         string name;
-        string jobName = "";
+        string jobName;
         public void GetNameAndJob()
         {
             Console.Clear();
@@ -21,7 +21,12 @@ namespace TextRPG
             {
                 GetNameAndJob();
             }
+            else
+            {
+                Player.CreateInstance(name, jobName);
+            }
         }
+
         void GetName()
         {
             Console.Clear();
