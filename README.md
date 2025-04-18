@@ -3,16 +3,20 @@
 
 Figma를 이용해 어떤 흐름으로 개발을 할지 틀을 잡고 진행을 해봤는데, 아직 부족한 부분이 많습니다..
 
+https://www.figma.com/board/yvjhG1hZgW6F786nd9PrRg/TextRPG?node-id=0-1&p=f&t=JCUGqNy22rg1Df0B-0
+
 ### 주요 기능
 
-- InputHelper
+- **InputHelper**
+
 'InputHelper.GetInt'를 만들어 출력할 string, 최솟값, 최댓값을 입력받습니다.
 while문을 사용해 범위에 맞는 숫자를 출력하기 전까진 탈출할 수 없습니다.
 함수의 자료형이 int이기 때문에, 입력받은 값을 변수에 저장해 적절한 곳에 쓸 수 있습니다.
 
 함수에 너무 긴 string을 직접 입력하면 가독성이 떨어져서, string 변수를 만들어 해당 변수에 값을 입력해 넣는 방식을 사용하고 있습니다.
 
-- ItemTextHelper
+- **ItemTextHelper**
+  
 인벤토리와 상점에서 아이템 컬렉션을 반복해 출력해야하는 경우가 있는데, 동일한 구조의 함수들이 반복이 되는 것 같아 만들어봤습니다.
 추후에 새로운 형태의 아이템 출력 방식이 생긴다면 쉽게 추가할 수 있을것입니다.
 
@@ -29,4 +33,4 @@ ItemManager 클래스를 만들어서 다뤘더라면 Shop과 Inventory의 결�
 
 상호 의존성을 줄이기 위해 클래스를 분리해 관리하려 했지만, 구현 과정에서 일부 의존성이 생긴 부분은 아쉬움이 남습니다.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/yvjhG1hZgW6F786nd9PrRg/TextRPG?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
