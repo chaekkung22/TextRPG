@@ -11,13 +11,21 @@ namespace TextRPG
         private static Lazy<GameManager> instance = new Lazy<GameManager>(() => new GameManager());
         public static GameManager Instance => instance.Value;
 
-        private GameManager() { }
+
+        public Inventory Inventory { get;  set; }
+        public Shop Shop { get; set; }
+        public Village Village { get; set; }
+
+        private GameManager()
+        { 
+            Inventory = new Inventory();
+            Shop = new Shop();
+            Village = new Village(Shop,Inventory);
+        }
         public void Run()
         {
-            Start start = new Start();
-            start.GetNameAndJob();
-            Village village = new Village();
-            village.VilageMenu();
+            new Start().GetNameAndJob();
+            Village.VillageMenu();
         }
     }
 }
