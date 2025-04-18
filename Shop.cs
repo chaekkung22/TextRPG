@@ -12,7 +12,7 @@ namespace TextRPG
 
         public void ShopMenu()
         {
-            string listText = ItemListText();
+            string listText = ItemTextHelper.GenerateItemListText(shopItems,ItemDisplayMode.Normal);
 
             string show = $@"==상점==
 필요한 아이템을 얻을 수 있는 상점입니다.
@@ -37,7 +37,7 @@ namespace TextRPG
 
         void BuyItem()
         {
-            string listWithIndexText = ItemListText(true);
+            string listWithIndexText = ItemTextHelper.GenerateItemListText(shopItems, ItemDisplayMode.WithIndex);
             int itemLength = shopItems.Count;
 
             string show = $@"==상점 - 아이템 구매==
@@ -58,7 +58,7 @@ namespace TextRPG
                 ShopMenu();
             else
             {
-                if(shopItems[item].IsSold)
+                if (shopItems[item].IsSold)
                 {
                     Console.WriteLine("이미 구매한 아이템입니다.");
                     Thread.Sleep(1000);
@@ -76,10 +76,10 @@ namespace TextRPG
                     Thread.Sleep(1000);
                     Player.Instance.Gold -= shopItems[item].Price;
                     shopItems[item].IsSold = true;
-                    
-                    new Inventory().InventoryList(shopItems[item]); // 입력한 번호의 아이템을 인벤토리에 저장
 
-                    ShopMenu(); 
+                    Player.Instance.Inventory.InventoryList(shopItems[item]); // 입력한 번호의 아이템을 인벤토리에 저장
+
+                    ShopMenu();
                 }
             }
         }
@@ -95,33 +95,6 @@ namespace TextRPG
                 new Item("청동 도끼", 5, "어디선가 사용된 흔적이 있는 도끼입니다.", 1500, ItemType.Attack),
                 new Item("스파르타의 창", 7, "스파르타의 전사들이 사용했다는 전설의 창입니다.", 2100, ItemType.Attack)
             };
-        }
-
-
-        string ItemListText(bool withIndex = false)
-        {
-            string result = "";
-            for (int i = 0; i < shopItems.Count; i++)
-            { 
-                var item = shopItems[i];
-          
-                    string priceText = item.IsSold ? "구매완료" : $"{item.Price,5} G";
-
-                string valueText = item.Type == ItemType.Attack
-                    ? "공격력 +"
-                    : "방어력 +";
-                string line = $"{item.Name.PadRight(10)} | {valueText}{item.Value:D2} | {item.Explain.PadRight(20)} | {priceText}";
-                
-                if(withIndex)
-                {
-                    result += $"{i + 1}. {line}\n\n";
-                }
-                else
-                {
-                    result += $"{line}\n\n";
-                }
-            }
-            return result;
         }
     }
 }

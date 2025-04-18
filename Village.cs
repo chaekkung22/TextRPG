@@ -8,6 +8,16 @@ namespace TextRPG
 {
     internal class Village
     {
+
+        private Shop shop;
+        private Inventory inventory;
+
+        public Village(Shop shop, Inventory inventory)
+        {
+            this.shop = shop;
+            this.inventory = inventory;
+        }
+
         public void VillageMenu()
         {
             Console.Clear();
@@ -29,12 +39,12 @@ namespace TextRPG
             }
             else if (choice == 2) 
             {
-                new Inventory().InventoryMenu();
+                inventory.InventoryMenu();
                 VillageMenu();
             }
             else 
             {
-                new Shop().ShopMenu();
+                shop.ShopMenu();
                 VillageMenu();
             }
         }
